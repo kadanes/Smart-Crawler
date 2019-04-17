@@ -1,0 +1,157 @@
+body,div,ul,ol,li,h3 { 
+	margin:0;
+    padding:0;
+    text-transform: uppercase;
+}
+html,body {
+	margin:0;
+	padding:0;
+}
+
+ol,ul {
+	list-style:none;
+}
+
+h3 {
+	font-size:100%;
+	font-weight:normal;
+}
+
+
+body{
+	font-family: "Fira Sans";
+	background: #000;
+	font-weight: 400;
+	font-size: 15px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.ie7 body{
+	overflow:hidden;
+}
+
+.container{
+	position: relative;
+	text-align: center;
+}
+
+.background-carousal,
+.background-carousal:after { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+}
+
+.background-carousal li span { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+	-webkit-backface-visibility: hidden;
+    animation: bg-animation 36s linear infinite 0s; 
+}
+
+.background-carousal li div { 
+    z-index: 1000;
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    color: #fff;
+    animation: cap-animation 36s linear infinite 0s; 
+}
+
+.background-carousal li div h3 { 
+    font-family: "Fira Sans";
+    font-size: 200px;
+    padding: 0;
+    line-height: 200px; 
+}
+
+.background-carousal li:nth-child(1) span { 
+    background-image: url(../images/1.jpg) 
+}
+.background-carousal li:nth-child(2) span { 
+    background-image: url(../images/2.jpg);
+    animation-delay: 5s; 
+}
+.background-carousal li:nth-child(3) span { 
+    background-image: url(../images/3.jpg);
+    animation-delay: 10s; 
+}
+.background-carousal li:nth-child(4) span { 
+    background-image: url(../images/4.jpg);
+    animation-delay: 20s; 
+}
+.background-carousal li:nth-child(5) span { 
+    background-image: url(../images/5.jpg);
+    animation-delay: 25s; 
+}
+.background-carousal li:nth-child(6) span { 
+    background-image: url(../images/6.png);
+    animation-delay: 30s; 
+}
+
+.background-carousal li:nth-child(2) div { 
+    animation-delay: 5s; 
+}
+.background-carousal li:nth-child(3) div { 
+    animation-delay: 10s; 
+}
+.background-carousal li:nth-child(4) div { 
+    animation-delay: 20s; 
+}
+.background-carousal li:nth-child(5) div { 
+    animation-delay: 25s; 
+}
+.background-carousal li:nth-child(6) div { 
+    animation-delay: 30s; 
+}
+
+#login-btn {
+    width: 300px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    display: block;
+    font-family: 'Fira Sans';
+    font-size: 24px;
+    padding: 0;
+    background-color: rgba(219, 50, 54);
+    border: none;
+    border-radius: 10px;
+    margin-top: 200px;
+    color: white;
+    text-transform: uppercase;
+}
+
+@keyframes bg-animation { 
+    0% { opacity: 0;
+    animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+@keyframes cap-animation { 
+    0% { opacity: 0 }
+    8% { opacity: 1 }
+    17% { opacity: 1 }
+    19% { opacity: 0 }
+    100% { opacity: 0 }
+}
