@@ -11,7 +11,7 @@ def calculate_rank():
     """Initiate the rank calculation
     This function will initiate the rank calculation for list of urls in the database.
     """
-
+    print("Rank")
     set_key_count()
     set_rank()
 
@@ -74,7 +74,7 @@ def set_key_count():
             print("keycount found for >",url,"<")
             continue
         else: 
-            
+            print(url)
             key_count = calc_key_count(url)
 
             obj["keyCount"] = key_count
@@ -113,7 +113,7 @@ if __name__ == "__main__":
     
     cred = credentials.Certificate('config.json')
     firebase_admin.initialize_app(cred, {
-        'databaseURL': 'https://web-quickstart-e65e8.firebaseio.com/'
+        'databaseURL': 'https://smartcrawler-75efe.firebaseio.com'
     })
     
     calculate_rank()

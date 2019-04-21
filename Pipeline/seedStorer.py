@@ -49,6 +49,7 @@ def get_seed_urls(inQueries):
                     cleanUrl = cleanUrl.split('&')[0]
                     if (not cleanUrl in found_links and cleanUrl != "" and not check_ignore_terms(cleanUrl)):
                         found_links.append(cleanUrl)
+                        print(cleanUrl)
                         urlObj = {"parent":"none","keywords":query.split("+"),"url":cleanUrl,"abstract":"To be filled","likes":[],"dislikes":[]}
                         linkTree.append(urlObj)
 
@@ -60,6 +61,6 @@ def get_seed_urls(inQueries):
 if __name__ == "__main__":
     cred = credentials.Certificate('config.json')
     firebase_admin.initialize_app(cred, {
-        'databaseURL': 'https://web-quickstart-e65e8.firebaseio.com/'
+        'databaseURL': 'https://smartcrawler-75efe.firebaseio.com'
     })
     get_seed_urls(["diwali make your decoration"])

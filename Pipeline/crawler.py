@@ -178,6 +178,6 @@ def seedCrawler():
 if __name__ == "__main__":
     cred = credentials.Certificate('config.json')
     firebase_admin.initialize_app(cred, {
-        'databaseURL': 'https://web-quickstart-e65e8.firebaseio.com/'
+        'databaseURL': 'https://smartcrawler-75efe.firebaseio.com'
     })
     seedCrawler()    

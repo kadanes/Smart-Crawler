@@ -9,8 +9,9 @@ $.getJSON("./config.json", function(data) {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       var displayName = user.displayName;
+      var displayUrl = user.displayUrl
       var uid = user.email.split("@")[0];
-      storeUser([uid, displayName]);
+      storeUser([uid, displayUrl]);
 
       document.getElementById("status").innerText = "Welcome " + displayName;
     } else {

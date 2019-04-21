@@ -32,6 +32,7 @@ def summarize():
         length_is_appropriate = False
         max_length = 90
         obj = linkTree[i]
+        print("Summarizing for ",obj["url"])
 
         if not obj["abstract"] == "To be filled":
             print("Exists for ",obj["url"])
@@ -85,8 +86,9 @@ def summarize():
                 if len(summary.split()) <= max_length:
                     length_is_appropriate = True
                     SENTENCES_COUNT = max
+                    print("Found summary of appropriate length")
                 else:
-                    print(len(summary.split()))
+                    print("Summary word count: "+str(len(summary.split())))
                     SENTENCES_COUNT = SENTENCES_COUNT - 1
                     continue
                     
@@ -114,6 +116,6 @@ def fetch():
 if __name__ == "__main__":
     cred = credentials.Certificate('config.json')
     firebase_admin.initialize_app(cred, {
-        'databaseURL': 'https://web-quickstart-e65e8.firebaseio.com/'
+        'databaseURL': 'https://smartcrawler-75efe.firebaseio.com'
     })
     fetch()

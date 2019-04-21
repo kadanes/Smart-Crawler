@@ -1,5 +1,4 @@
 var email;
-var phonenumber;
 var userId;
 var savedRef;
 var prefRef;
@@ -21,6 +20,8 @@ $.getJSON("./config.json", function(data) {
       if (user) {
         email = user.email;
         photoURL = user.photoURL;
+
+        console.log(photoURL)
 
         document.getElementById("profile-img").src = photoURL;
         document.getElementById("user-name").innerHTML = user.displayName;
@@ -256,10 +257,7 @@ function makeCell(content) {
 
       starredUrls = starredUrls.filter(item => item !== url);
       savedRef.set(starredUrls);
-      container = document.getElementById("saved-opp-container");
-      container.removeChild(cell);
-      container = document.getElementById("opp-container");
-      container.appendChild(cell);
+      renderData()
     } else {
       var filledStarClass = document.createAttribute("class");
       filledStarClass.value = "fa fa-star star-icon";
@@ -268,10 +266,7 @@ function makeCell(content) {
       starredUrls.push(url);
 
       savedRef.set(starredUrls);
-      container = document.getElementById("opp-container");
-      container.removeChild(cell);
-      container = document.getElementById("saved-opp-container");
-      container.appendChild(cell);
+      renderData()
     }
 
     document.getElementById("savedCount").innerHTML = starredUrls.length;
