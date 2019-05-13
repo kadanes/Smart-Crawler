@@ -62,11 +62,11 @@ def summarize():
                     elif image_count >= 3:
                         rand = int(int(random.random() * 1000) % (image_count))
 
-                    if "src" in images[rand]:
+                    if images[rand].has_attr("src"):
                         img_link = str(images[rand]['src'])
-                    elif "data-src" in images[rand]:
+
+                    elif images[rand].has_attr("data-src"):
                         img_link = str(images[rand]['data-src'])
-                
 
                 summary = ""     
                 summarizer = EdmundsonSummarizer() 
